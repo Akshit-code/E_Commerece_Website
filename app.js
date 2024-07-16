@@ -16,16 +16,6 @@ app.use(bodyParser.urlencoded( { extended:false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// mongoose.connect(process.env.DATABASE_HOST);
-// const db = mongoose.connection;
-// db.on('error', (err) => {
-//     console.log('MongoDB connection error: ', err);
-// });
-
-// db.once('open', ()=> {
-//     console.log("Connected  to MongoDB");
-// });
-
 if (process.env.NODE_ENV !== 'test') {
     mongoose.connect(process.env.DATABASE_HOST, {
         useNewUrlParser: true,
